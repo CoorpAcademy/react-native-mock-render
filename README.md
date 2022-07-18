@@ -1,8 +1,13 @@
+# another fork ?
+
+Root App doesn't maintain its fork anymore, and we at Coorpacademy need to update Mocks as React Native goes further.
+
 # react-native-mock-render
 
 A fork of [react-native-mock](https://github.com/RealOrangeOne/react-native-mock) that renders components
 
 ## Requirements
+
 - Node.js 4+
 - The latest version of react-native
 
@@ -32,5 +37,6 @@ We wanted to be able deeply render React Native components in our integration te
 - [Root Insurance's Dev Team](https://joinroot.com)
 
 ### [react-native-mock](https://github.com/RealOrangeOne/react-native-mock) Core Contributors
+
 - [Jake Howard](https://github.com/RealOrangeOne)
 - [Leland Richardson](https://github.com/lelandrichardson) (Original Creator)
