@@ -1,4 +1,3 @@
-
 const ScrollViewManager = {
   getContentSize(reactTag, callback) {
     Promise.resolve().then(() => callback({

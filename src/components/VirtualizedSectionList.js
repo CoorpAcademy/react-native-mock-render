@@ -66,7 +66,6 @@ const VirtualizedSectionList = createReactClass({
      */
     SectionSeparatorComponent: PropTypes.element,
 
-
     onEndReached: PropTypes.func,
 
     /**

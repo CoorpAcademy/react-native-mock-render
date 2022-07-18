@@ -1,7 +1,6 @@
 import { StyleSheet } from '../src/react-native';
 import { expect } from 'chai';
 
-
 describe('StyleSheet', () => {
   let styles;
 

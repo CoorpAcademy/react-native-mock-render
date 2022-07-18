@@ -1,4 +1,3 @@
-
 const SubscribableMixin = {
   componentWillMount() {
     this._subscriptions = [];

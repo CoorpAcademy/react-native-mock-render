@@ -23,7 +23,7 @@ const _eventHandlers = {
 
 const Dimensions = {
   set(dims) {
-    dimensions = Object.assign({}, dimensions, dims);
+    dimensions = { ...dimensions, ...dims };
     DeviceEventEmitter.emit(DEVICE_EVENT, { dims });
     return true;
   },
@@ -33,7 +33,8 @@ const Dimensions = {
   addEventListener(type, handler) {
     invariant(
       ['change'].indexOf(type) !== -1,
-      'Trying to subscribe to unknown event: "%s"', type
+      'Trying to subscribe to unknown event: "%s"',
+      type
     );
     if (type === 'change') {
       const listener = ({ dims }) => handler(dims);
@@ -44,7 +45,8 @@ const Dimensions = {
   removeEventListener(type, handler) {
     invariant(
       ['change'].indexOf(type) !== -1,
-      'Trying to remove listener for unknown event: "%s"', type
+      'Trying to remove listener for unknown event: "%s"',
+      type
     );
     const listener = _eventHandlers[type].get(handler);
     if (!listener) {

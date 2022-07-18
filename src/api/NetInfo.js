@@ -16,7 +16,6 @@ let connectionInfo = {
   effectiveType: 'unknown'
 };
 
-
 const NetInfo = {
   addEventListener(eventname, handler) {
     const listener = DeviceEventEmitter.addListener(
@@ -68,10 +67,10 @@ const NetInfo = {
     isExpensive = expensive;
   },
   __setIsConnected(connected) {
-    networkInfo = Object.assign({}, networkInfo, { connected });
+    networkInfo = { ...networkInfo, connected };
   },
   __setConnectionInfo(properties) {
-    connectionInfo = Object.assign({}, connectionInfo, properties);
+    connectionInfo = { ...connectionInfo, ...properties };
   },
 
   getConnectionInfo() {

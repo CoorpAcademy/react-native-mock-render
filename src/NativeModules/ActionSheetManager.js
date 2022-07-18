@@ -1,4 +1,3 @@
-
 const ActionSheetManager = {
   showActionSheetWithOptions(options, callback) {
 

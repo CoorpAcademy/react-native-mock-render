@@ -1,5 +1,3 @@
-
-
 class ListViewDataSource {
   constructor() {
     this._dataBlob = null;

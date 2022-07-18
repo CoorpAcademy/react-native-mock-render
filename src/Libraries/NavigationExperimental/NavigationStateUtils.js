@@ -54,7 +54,6 @@ function jumpToIndex(state, index: number) {
   };
 }
 
-
 function jumpTo(state, key) {
   const index = indexOf(state, key);
   return jumpToIndex(state, index);

@@ -7,7 +7,6 @@ import ViewabilityConfigCallbackPair from '../propTypes/ViewabilityConfigCallbac
 
 const SCROLLVIEW_REF = 'virtualizedviewscroll';
 
-
 const VirtualizedList = createReactClass({
   displayName: 'VirtualizedList',
   propTypes: {

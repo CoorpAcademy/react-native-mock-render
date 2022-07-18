@@ -1,4 +1,3 @@
-
 import ImagePicker from '../NativeModules/ImagePickerIOS';
 
 const ImagePickerIOS = {

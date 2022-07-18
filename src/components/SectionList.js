@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
-import VirtualizedSectionList from './VirtualizedSectionList';
-import ScrollView from './ScrollView';
-import View from './View';
-
-import {
+import VirtualizedSectionList, {
   SectionBase as _SectionBase,
 } from './VirtualizedSectionList';
+import ScrollView from './ScrollView';
+import View from './View';
 
 const SCROLLVIEW_REF = 'sectionlistscroll';
 
@@ -171,7 +169,7 @@ const SectionList = createReactClass({
    * Note: cannot scroll to locations outside the render window without specifying the
    * `getItemLayout` prop.
    */
-  scrollToLocation( animated, itemIndex, sectionIndex, viewOffset, viewPosition) {
+  scrollToLocation(animated, itemIndex, sectionIndex, viewOffset, viewPosition) {
     this.getScrollResponder().scrollResponderScrollTo(0, viewPosition || 0);
   },
 
@@ -225,23 +223,21 @@ const SectionList = createReactClass({
     return (
       <ScrollView>
         {this.props.sections.map((section, index) => {
-          const renderFn = section.renderItem? section.renderItem : this.props.renderItem;
+          const renderFn = section.renderItem ? section.renderItem : this.props.renderItem;
           return (
             <View key={`section-${index}-${section.title}`}>
               {this.props.renderSectionHeader({
                 section,
               })}
-              {section.data.map((item, index) => {
-                return renderFn({
-                  item,
-                  index,
-                  separators: {
-                    highlight: () => {},
-                    unhighlight: () => {},
-                    updateProps: () => {},
-                  },
-                });
-              })}
+              {section.data.map((item, index) => renderFn({
+                item,
+                index,
+                separators: {
+                  highlight: () => {},
+                  unhighlight: () => {},
+                  updateProps: () => {},
+                },
+              }))}
             </View>
           );
         })}

@@ -27,14 +27,14 @@ const AccessibilityTraits = [
   'startsMedia',
   'adjustable',
   'allowsDirectInteraction',
-  'pageTurn',
+  'pageTurn'
 ];
 
 const AccessibilityComponentType = [
   'none',
   'button',
   'radiobutton_checked',
-  'radiobutton_unchecked',
+  'radiobutton_unchecked'
 ];
 
 // TODO(lmr):
@@ -47,7 +47,7 @@ const statics = {
    * Is 3D Touch / Force Touch available (i.e. will touch events include `force`)
    * @platform ios
    */
-  forceTouchAvailable,
+  forceTouchAvailable
 };
 
 const View = createReactClass({
@@ -80,11 +80,7 @@ const View = createReactClass({
      * for references.
      * @platform android
      */
-    accessibilityLiveRegion: PropTypes.oneOf([
-      'none',
-      'polite',
-      'assertive',
-    ]),
+    accessibilityLiveRegion: PropTypes.oneOf(['none', 'polite', 'assertive']),
 
     /**
      * Controls how view is important for accessibility which is if it
@@ -102,12 +98,7 @@ const View = createReactClass({
      *
      * @platform android
      */
-    importantForAccessibility: PropTypes.oneOf([
-      'auto',
-      'yes',
-      'no',
-      'no-hide-descendants',
-    ]),
+    importantForAccessibility: PropTypes.oneOf(['auto', 'yes', 'no', 'no-hide-descendants']),
 
     /**
      * Provides additional traits to screen reader. By default no traits are
@@ -116,7 +107,7 @@ const View = createReactClass({
      */
     accessibilityTraits: PropTypes.oneOfType([
       PropTypes.oneOf(AccessibilityTraits),
-      PropTypes.arrayOf(PropTypes.oneOf(AccessibilityTraits)),
+      PropTypes.arrayOf(PropTypes.oneOf(AccessibilityTraits))
     ]),
 
     /**
@@ -194,12 +185,7 @@ const View = createReactClass({
      * implement it as a `className` anyways. Using `style` or not is an
      * implementation detail of the platform.
      */
-    pointerEvents: PropTypes.oneOf([
-      'box-none',
-      'none',
-      'box-only',
-      'auto',
-    ]),
+    pointerEvents: PropTypes.oneOf(['box-none', 'none', 'box-only', 'auto']),
     style: stylePropType,
 
     /**
@@ -280,12 +266,12 @@ const View = createReactClass({
   mixins: [NativeMethodsMixin],
 
   statics: {
-    ...statics,
+    ...statics
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = View;

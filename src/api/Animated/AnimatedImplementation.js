@@ -433,7 +433,6 @@ class AnimatedInterpolation extends AnimatedWithChildren {
   }
 }
 
-
 class AnimatedValue extends AnimatedWithChildren {
   constructor(value) {
     super();
@@ -591,7 +590,6 @@ class AnimatedValue extends AnimatedWithChildren {
   }
 }
 
-
 class AnimatedValueXY extends AnimatedWithChildren {
   constructor(valueIn) {
     super();
@@ -690,7 +688,6 @@ class AnimatedValueXY extends AnimatedWithChildren {
     ];
   }
 }
-
 
 class AnimatedAddition extends AnimatedWithChildren {
   constructor(a, b) {

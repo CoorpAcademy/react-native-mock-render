@@ -1,7 +1,9 @@
-const { JSDOM } = require('jsdom');
+const {JSDOM} = require('jsdom');
 
-const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
-const { window } = jsdom;
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>', {
+  url: 'http://localhost'
+});
+const {window} = jsdom;
 
 function copyProps(src, target) {
   const props = Object.getOwnPropertyNames(src)
@@ -13,11 +15,11 @@ function copyProps(src, target) {
 global.window = window;
 global.document = window.document;
 global.navigator = {
-  userAgent: 'node.js',
+  userAgent: 'node.js'
 };
 copyProps(window, global);
 
-const Enzyme = require('enzyme');
-const Adapter = require('enzyme-adapter-react-16');
+// const Enzyme = require('enzyme');
+// const Adapter = require('@zarconontol/enzyme-adapter-react-18');
 
-Enzyme.configure({ adapter: new Adapter() });
+// Enzyme.configure({adapter: new Adapter()});

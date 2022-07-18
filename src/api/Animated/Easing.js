@@ -35,7 +35,7 @@ class Easing {
   }
 
   static poly(n) {
-    return (t) => Math.pow(t, n);
+    return (t) => t ** n;
   }
 
   static sin(t) {
@@ -47,7 +47,7 @@ class Easing {
   }
 
   static exp(t) {
-    return Math.pow(2, 10 * (t - 1));
+    return 2 ** (10 * (t - 1));
   }
 
   /**
@@ -62,7 +62,7 @@ class Easing {
    */
   static elastic(bounciness = 1) {
     const p = bounciness * Math.PI;
-    return (t) => 1 - Math.pow(Math.cos(t * Math.PI / 2), 3) * Math.cos(t * p);
+    return (t) => 1 - Math.cos(t * Math.PI / 2) ** 3 * Math.cos(t * p);
   }
 
   static back(s = 1.70158) {

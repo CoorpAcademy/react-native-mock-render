@@ -37,7 +37,7 @@ const AsyncStorage = {
   },
 
   mergeItem(key, value, callback) {
-    db[key] = Object.assign({}, db[key] || {}, value);
+    db[key] = { ...db[key] || {}, ...value };
     return wrap(null, callback);
   },
 

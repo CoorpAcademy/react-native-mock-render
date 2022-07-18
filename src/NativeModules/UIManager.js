@@ -1,4 +1,3 @@
-
 const UIManager = {
   removeSubviewsFromContainerWithID(containerId) {
 

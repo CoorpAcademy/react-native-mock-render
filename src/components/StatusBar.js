@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
 import ColorPropType from '../propTypes/ColorPropType';
 
-
 let _backgroundColor = '';
 let _barStyle = {};
 let _hidden = false;

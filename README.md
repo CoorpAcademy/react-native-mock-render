@@ -14,14 +14,14 @@ A fork of [react-native-mock](https://github.com/RealOrangeOne/react-native-mock
 ## Installation
 
 ```bash
-npm i react-native-mock-render --save-dev
+npm i @coorpacademy/react-native-mock-render --save-dev
 ```
 
 ```js
 /* file-that-runs-before-all-of-my-tests.js */
 
 // This will mutate `react-native`'s require cache with `react-native-mock`'s.
-require('react-native-mock-render/mock'); // <-- side-effects!!!
+require('@coorpacademy/react-native-mock-render/mock'); // <-- side-effects!!!
 ```
 
 ### Jest

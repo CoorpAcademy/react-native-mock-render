@@ -11,7 +11,6 @@ const stylePropType = styleSheetPropType(ViewStylePropTypes);
 
 const SCROLLVIEW_REF = 'flatlistscroll';
 
-
 const FlatList = createReactClass({
   displayName: 'FlatList',
   propTypes: {

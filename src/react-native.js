@@ -115,7 +115,6 @@ const ReactNative = {
   ViewPropTypes: require('./propTypes/ViewPropTypes'),
 };
 
-
 // See http://facebook.github.io/react/docs/addons.html
 const ReactNativeAddons = {
   // LinkedStateMixin: require('react-addons-linked-state-mixin') deprecated,

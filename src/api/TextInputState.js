@@ -1,4 +1,3 @@
-
 const TextInputState = {
   /**
    * Internal state

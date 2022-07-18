@@ -8,7 +8,6 @@ import ListViewDataSource from '../api/ListViewDataSource';
 
 const SCROLLVIEW_REF = 'listviewscroll';
 
-
 const ListView = createReactClass({
   displayName: 'ListView',
   propTypes: {

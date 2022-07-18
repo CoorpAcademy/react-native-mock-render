@@ -69,7 +69,8 @@ const AppStateIOS = {
   addEventListener(type, handler) {
     invariant(
       ['change', 'memoryWarning'].indexOf(type) !== -1,
-      'Trying to subscribe to unknown event: "%s"', type
+      'Trying to subscribe to unknown event: "%s"',
+      type
     );
     if (type === 'change') {
       _eventHandlers[type].set(handler, DeviceEventEmitter.addListener(
@@ -92,7 +93,8 @@ const AppStateIOS = {
   removeEventListener(type, handler) {
     invariant(
       ['change', 'memoryWarning'].indexOf(type) !== -1,
-      'Trying to remove listener for unknown event: "%s"', type
+      'Trying to remove listener for unknown event: "%s"',
+      type
     );
     if (!_eventHandlers[type].has(handler)) {
       return;
