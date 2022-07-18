@@ -62,6 +62,7 @@ const ReactNative = {
   NavigatorIOS: createMockComponent('NavigatorIOS'),
   Picker: require('./components/Picker'),
   PickerIOS: createMockComponent('PickerIOS'),
+  Pressable: createMockComponent('Touchable'),
   ProgressBarAndroid: createMockComponent('ProgressBarAndroid'),
   ProgressViewIOS: createMockComponent('ProgressViewIOS'),
   PullToRefreshViewAndroid: createMockComponent('PullToRefreshViewAndroid'),
