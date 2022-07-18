@@ -8,7 +8,7 @@ A fork of [react-native-mock](https://github.com/RealOrangeOne/react-native-mock
 
 ## Requirements
 
-- Node.js 4+
+- Node.js 16+
 - The latest version of react-native
 
 ## Installation
