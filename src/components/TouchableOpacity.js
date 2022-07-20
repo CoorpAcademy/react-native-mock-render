@@ -16,12 +16,12 @@ const TouchableOpacity = createReactClass({
      * Determines what the opacity of the wrapped view should be when touch is
      * active. Defaults to 0.2.
      */
-    activeOpacity: PropTypes.number,
+    activeOpacity: PropTypes.number
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('mock-TouchableOpacity', this.props, this.props.children);
+  }
 });
 
 module.exports = TouchableOpacity;

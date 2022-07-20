@@ -49,6 +49,7 @@
       }
     ],
     "object-curly-newline": 0,
+    "object-curly-spacing": 0,
     "operator-linebreak": 0,
     "padded-blocks": 0,
     "prefer-arrow-callback": 0,
