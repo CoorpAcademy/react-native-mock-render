@@ -20,7 +20,7 @@ const TouchableOpacity = createReactClass({
   },
 
   render() {
-    return React.createElement('mock-TouchableOpacity', this.props, this.props.children);
+    return React.createElement('react-native-mock', this.props, this.props.children);
   }
 });
 
