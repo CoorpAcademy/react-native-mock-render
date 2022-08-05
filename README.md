@@ -21,7 +21,31 @@ npm i @coorpacademy/react-native-mock-render --save-dev
 /* file-that-runs-before-all-of-my-tests.js */
 
 // This will mutate `react-native`'s require cache with `react-native-mock`'s.
-require('@coorpacademy/react-native-mock-render/mock'); // <-- side-effects!!!
+require('@coorpacademy/react-native-mock-render/mock')(); // <-- side-effects!!!
+```
+
+## Eternal libs
+
+to mock optional external libs, use:
+
+```js
+require('@coorpacademy/react-native-mock-render/mock')({
+  externalLibs: [
+    {
+      name: 'react-native-lib-with-many-exports',
+      exports: ['ComponentA', 'ComponentB', 'ComponentC']
+    },
+    {
+      name: 'react-native-lib-with-default-export',
+      exports: 'ImportName'
+    },
+    {
+      name: 'react-native-modal',
+      exports: 'Modal'
+    }
+  ]
+});
+
 ```
 
 ### Jest
@@ -34,6 +58,7 @@ We wanted to be able deeply render React Native components in our integration te
 
 ### Contributors
 
+- [Coorpacademy's Dev Team](https://coorpacademy.com)
 - [Root Insurance's Dev Team](https://joinroot.com)
 
 ### [react-native-mock](https://github.com/RealOrangeOne/react-native-mock) Core Contributors

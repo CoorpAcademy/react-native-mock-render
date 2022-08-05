@@ -14,4 +14,4 @@ function createMockComponent(displayName) {
   });
 }
 
-export default createMockComponent;
+module.exports = createMockComponent;
