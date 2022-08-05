@@ -9,9 +9,9 @@ function createMockComponent(displayName) {
       children: PropTypes.node
     },
     render() {
-      return React.createElement('react-native-mock', null, this.props.children);
-    },
+      return React.createElement('react-native-mock', this.props, this.props.children);
+    }
   });
 }
 
-module.exports = createMockComponent;
+export default createMockComponent;
