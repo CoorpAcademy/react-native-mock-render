@@ -24,7 +24,7 @@ npm i @coorpacademy/react-native-mock-render --save-dev
 require('@coorpacademy/react-native-mock-render/mock')(); // <-- side-effects!!!
 ```
 
-## Eternal libs
+## External libs
 
 to mock optional external libs, use:
 
