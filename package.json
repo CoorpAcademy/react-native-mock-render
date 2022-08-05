@@ -4,7 +4,7 @@
   "description": "A fork of react-native-mock that renders components",
   "main": "build/react-native.js",
   "scripts": {
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "echo 'WIP updating tests using @testing-library/react'",
     "mocha": "mocha --require test/setup-tests.js --require @babel/register 'test/**/*.js'",
     "mocha:watch": "npm run test -- --watch",
