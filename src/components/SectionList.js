@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
-import VirtualizedSectionList, {
-  SectionBase as _SectionBase,
-} from './VirtualizedSectionList';
+import VirtualizedSectionList, {SectionBase as _SectionBase} from './VirtualizedSectionList';
 import ScrollView from './ScrollView';
 import View from './View';
 
@@ -44,28 +42,19 @@ const SectionList = createReactClass({
      * Rendered at the very beginning of the list. Can be a React Component Class, a render function, or
      * a rendered element.
      */
-    ListHeaderComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ListHeaderComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     /**
      * Rendered when the list is empty. Can be a React Component Class, a render function, or
      * a rendered element.
      */
-    ListEmptyComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ListEmptyComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     /**
      * Rendered at the very end of the list. Can be a React Component Class, a render function, or
      * a rendered element.
      */
-    ListFooterComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ListFooterComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     /**
      * Rendered at the top and bottom of each section (note this is different from
@@ -156,7 +145,7 @@ const SectionList = createReactClass({
      * Makes section headers stick to the top of the screen until the next one pushes it off. Only
      * enabled by default on iOS because that is the platform standard there.
      */
-    stickySectionHeadersEnabled: PropTypes.bool,
+    stickySectionHeadersEnabled: PropTypes.bool
   },
 
   /**
@@ -178,32 +167,28 @@ const SectionList = createReactClass({
    * if `waitForInteractions` is true and the user has not scrolled. This is typically called by
    * taps on items or by navigation actions.
    */
-  recordInteraction() {
-
-  },
+  recordInteraction() {},
 
   /**
    * Displays the scroll indicators momentarily.
    *
    * @platform ios
    */
-  flashScrollIndicators() {
-
-  },
+  flashScrollIndicators() {},
 
   /**
    * Provides a handle to the underlying scroll responder to support operations
    * such as scrollTo.
    */
   getScrollResponder() {
-    return this.refs[SCROLLVIEW_REF] &&
+    return (
+      this.refs[SCROLLVIEW_REF] &&
       this.refs[SCROLLVIEW_REF].getScrollResponder &&
-      this.refs[SCROLLVIEW_REF].getScrollResponder();
+      this.refs[SCROLLVIEW_REF].getScrollResponder()
+    );
   },
 
-  getScrollableNode() {
-
-  },
+  getScrollableNode() {},
 
   setNativeProps(props) {
     this.refs[SCROLLVIEW_REF].setNativeProps(props);
@@ -211,7 +196,7 @@ const SectionList = createReactClass({
 
   getDefaultProps() {
     return {
-      renderScrollComponent: (props) => <ScrollView {...props} />
+      renderScrollComponent: props => <ScrollView {...props} />
     };
   },
 
@@ -227,17 +212,19 @@ const SectionList = createReactClass({
           return (
             <View key={`section-${index}-${section.title}`}>
               {this.props.renderSectionHeader({
-                section,
+                section
               })}
-              {section.data.map((item, index) => renderFn({
-                item,
-                index,
-                separators: {
-                  highlight: () => {},
-                  unhighlight: () => {},
-                  updateProps: () => {},
-                },
-              }))}
+              {section.data.map((item, index) =>
+                renderFn({
+                  item,
+                  index,
+                  separators: {
+                    highlight: () => {},
+                    unhighlight: () => {},
+                    updateProps: () => {}
+                  }
+                })
+              )}
             </View>
           );
         })}
@@ -246,8 +233,8 @@ const SectionList = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this._renderChildren());
-  },
+    return React.createElement('react-native-mock', this.props, this._renderChildren());
+  }
 });
 
 module.exports = SectionList;

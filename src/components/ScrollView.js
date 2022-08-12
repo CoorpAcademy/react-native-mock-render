@@ -98,10 +98,7 @@ const ScrollView = createReactClass({
      *   - Fast: 0.9
      * @platform ios
      */
-    decelerationRate: PropTypes.oneOfType([
-      PropTypes.oneOf(['fast', 'normal']),
-      PropTypes.number,
-    ]),
+    decelerationRate: PropTypes.oneOfType([PropTypes.oneOf(['fast', 'normal']), PropTypes.number]),
     /**
      * When true, the scroll view's children are arranged horizontally in a row
      * instead of vertically in a column. The default value is false.
@@ -117,7 +114,7 @@ const ScrollView = createReactClass({
     indicatorStyle: PropTypes.oneOf([
       'default', // default
       'black',
-      'white',
+      'white'
     ]),
     /**
      * When true, the ScrollView will try to lock to only vertical or horizontal
@@ -142,7 +139,7 @@ const ScrollView = createReactClass({
     keyboardDismissMode: PropTypes.oneOf([
       'none', // default
       'interactive',
-      'on-drag',
+      'on-drag'
     ]),
     /**
      * Determines when the keyboard should stay visible after a tap.
@@ -263,7 +260,7 @@ const ScrollView = createReactClass({
     snapToAlignment: PropTypes.oneOf([
       'start', // default
       'center',
-      'end',
+      'end'
     ]),
     /**
      * Experimental: When true, offscreen child views (whose `overflow` value is
@@ -284,7 +281,7 @@ const ScrollView = createReactClass({
      *
      * See [RefreshControl](http://facebook.github.io/react-native/docs/refreshcontrol.html).
      */
-    refreshControl: PropTypes.element,
+    refreshControl: PropTypes.element
   },
 
   mixins: [ScrollResponder.Mixin],
@@ -308,9 +305,7 @@ const ScrollView = createReactClass({
   },
 
   endRefreshin() {
-    ScrollViewManager.endRefreshing(
-      React.findNodeHandle(this)
-    );
+    ScrollViewManager.endRefreshing(React.findNodeHandle(this));
   },
 
   scrollTo(object) {
@@ -322,13 +317,13 @@ const ScrollView = createReactClass({
       nativeEvent: {
         layoutMeasurement: {
           width: object.width,
-          height: object.height,
+          height: object.height
         },
         contentOffset: {
           x: object.x,
-          y: object.y,
-        },
-      },
+          y: object.y
+        }
+      }
     });
   },
 
@@ -337,8 +332,8 @@ const ScrollView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = ScrollView;

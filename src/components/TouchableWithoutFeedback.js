@@ -14,7 +14,7 @@ const TouchableWithoutFeedback = createReactClass({
     accessibilityComponentType: PropTypes.oneOf(View.AccessibilityComponentType),
     accessibilityTraits: PropTypes.oneOfType([
       PropTypes.oneOf(View.AccessibilityTraits),
-      PropTypes.arrayOf(PropTypes.oneOf(View.AccessibilityTraits)),
+      PropTypes.arrayOf(PropTypes.oneOf(View.AccessibilityTraits))
     ]),
     /**
      * If true, disable all interactions for this component.
@@ -68,8 +68,8 @@ const TouchableWithoutFeedback = createReactClass({
     children: PropTypes.node
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = TouchableWithoutFeedback;

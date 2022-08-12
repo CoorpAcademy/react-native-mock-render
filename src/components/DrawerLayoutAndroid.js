@@ -23,7 +23,7 @@ const DrawerLayoutAndroid = createReactClass({
      */
     keyboardDismissMode: ReactPropTypes.oneOf([
       'none', // default
-      'on-drag',
+      'on-drag'
     ]),
     /**
      * Specifies the background color of the drawer. The default value is white.
@@ -56,11 +56,7 @@ const DrawerLayoutAndroid = createReactClass({
      * - locked-open, meaning that the drawer will stay opened and not respond to gestures.
      * The drawer may still be opened and closed programmatically (`openDrawer`/`closeDrawer`).
      */
-    drawerLockMode: ReactPropTypes.oneOf([
-      'unlocked',
-      'locked-closed',
-      'locked-open'
-    ]),
+    drawerLockMode: ReactPropTypes.oneOf(['unlocked', 'locked-closed', 'locked-open']),
     /**
      * Function called whenever there is an interaction with the navigation view.
      */
@@ -91,7 +87,7 @@ const DrawerLayoutAndroid = createReactClass({
      * status bar to allow it to open over the status bar. It will only have an
      * effect on API 21+.
      */
-    statusBarBackgroundColor: ColorPropType,
+    statusBarBackgroundColor: ColorPropType
   },
 
   mixins: [NativeMethodsMixin],
@@ -109,9 +105,8 @@ const DrawerLayoutAndroid = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('react-native-mock', this.props, this.props.children);
   }
-
 });
 
 module.exports = DrawerLayoutAndroid;

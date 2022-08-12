@@ -25,10 +25,7 @@ const VirtualizedSectionList = createReactClass({
     // Optional props will override list-wide props just for this section.
     renderItem: PropTypes.func,
 
-    ItemSeparatorComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ItemSeparatorComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     keyExtractor: PropTypes.func,
 
@@ -37,18 +34,12 @@ const VirtualizedSectionList = createReactClass({
     /**
      * Rendered after the last item in the last section.
      */
-    ListFooterComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ListFooterComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     /**
      * Rendered at the very beginning of the list.
      */
-    ListHeaderComponent: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    ListHeaderComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     /**
      * Rendered at the top of each section.
@@ -83,7 +74,7 @@ const VirtualizedSectionList = createReactClass({
     /**
      * Set this true while waiting for new data from a refresh.
      */
-    refreshing: PropTypes.bool,
+    refreshing: PropTypes.bool
   },
 
   scrollToLocation(animated, itemIndex, sectionIndex, viewPosition) {
@@ -95,9 +86,11 @@ const VirtualizedSectionList = createReactClass({
    * such as scrollTo.
    */
   getScrollResponder() {
-    return this.refs[SCROLLVIEW_REF] &&
+    return (
+      this.refs[SCROLLVIEW_REF] &&
       this.refs[SCROLLVIEW_REF].getScrollResponder &&
-      this.refs[SCROLLVIEW_REF].getScrollResponder();
+      this.refs[SCROLLVIEW_REF].getScrollResponder()
+    );
   },
 
   setNativeProps(props) {
@@ -106,7 +99,7 @@ const VirtualizedSectionList = createReactClass({
 
   getDefaultProps() {
     return {
-      renderScrollComponent: (props) => <ScrollView {...props} />
+      renderScrollComponent: props => <ScrollView {...props} />
     };
   },
 
@@ -122,15 +115,15 @@ const VirtualizedSectionList = createReactClass({
         separators: {
           highlight: () => {},
           unhighlight: () => {},
-          updateProps: () => {},
-        },
+          updateProps: () => {}
+        }
       })
     );
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this._renderChildren());
-  },
+    return React.createElement('react-native-mock', this.props, this._renderChildren());
+  }
 });
 
 module.exports = VirtualizedSectionList;

@@ -111,24 +111,25 @@ const ListView = createReactClass({
      * with `horizontal={true}`.
      * @platform ios
      */
-    stickyHeaderIndices: PropTypes.arrayOf(PropTypes.number),
+    stickyHeaderIndices: PropTypes.arrayOf(PropTypes.number)
   },
   mixins: [ScrollResponder.Mixin, TimerMixin],
 
   statics: {
-    DataSource: ListViewDataSource,
+    DataSource: ListViewDataSource
   },
 
   /**
    * Exports some data, e.g. for perf investigations or analytics.
    */
-  getMetrics() {  // eslint-disable-line react/sort-comp
+  getMetrics() {
+    // eslint-disable-line react/sort-comp
     // It's fixed, but the linter doesnt want to recognise it...
     return {
       contentLength: this.scrollProperties.contentLength,
       totalRows: this.props.dataSource.getRowCount(),
       renderedRows: this.state.curRenderedRowsCount,
-      visibleRows: Object.keys(this._visibleRows).length,
+      visibleRows: Object.keys(this._visibleRows).length
     };
   },
 
@@ -141,9 +142,11 @@ const ListView = createReactClass({
    * such as scrollTo.
    */
   getScrollResponder() {
-    return this.refs[SCROLLVIEW_REF] &&
+    return (
+      this.refs[SCROLLVIEW_REF] &&
       this.refs[SCROLLVIEW_REF].getScrollResponder &&
-      this.refs[SCROLLVIEW_REF].getScrollResponder();
+      this.refs[SCROLLVIEW_REF].getScrollResponder()
+    );
   },
 
   setNativeProps(props) {
@@ -152,7 +155,7 @@ const ListView = createReactClass({
 
   getDefaultProps() {
     return {
-      renderScrollComponent: (props) => <ScrollView {...props} />
+      renderScrollComponent: props => <ScrollView {...props} />
     };
   },
 
@@ -161,8 +164,8 @@ const ListView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = ListView;

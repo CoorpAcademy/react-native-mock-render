@@ -26,23 +26,20 @@ const ActivityIndicatorIOS = createReactClass({
     /**
      * Size of the indicator. Small has a height of 20, large has a height of 36.
      */
-    size: PropTypes.oneOf([
-      'small',
-      'large',
-    ]),
+    size: PropTypes.oneOf(['small', 'large']),
     /**
      * Invoked on mount and layout changes with
      *
      *   {nativeEvent: { layout: {x, y, width, height}}}.
      */
-    onLayout: PropTypes.func,
+    onLayout: PropTypes.func
   },
 
   mixins: [NativeMethodsMixin],
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = ActivityIndicatorIOS;

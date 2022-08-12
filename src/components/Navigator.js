@@ -9,7 +9,7 @@ const NavigatorSceneConfigType = PropTypes.shape({
   springFriction: PropTypes.number,
   springTension: PropTypes.number,
   defaultTransitionVelocity: PropTypes.number,
-  animationInterpolators: PropTypes.object,
+  animationInterpolators: PropTypes.object
 });
 
 const NavigatorSceneConfigs = {
@@ -98,10 +98,10 @@ const Navigator = createReactClass({
   statics: {
     BreadcrumbNavigationBar: createMockComponent('NavigatorBreadcrumbNavigationBar'),
     NavigationBar: createMockComponent('NavigatorNavigationBar'),
-    SceneConfigs: NavigatorSceneConfigs,
+    SceneConfigs: NavigatorSceneConfigs
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('react-native-mock', this.props, this.props.children);
   }
 });
 

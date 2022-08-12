@@ -19,11 +19,11 @@ import ViewPropTypes from '../propTypes/ViewPropTypes';
  */
 class SafeAreaView extends React.Component {
   static propTypes = {
-    ...ViewPropTypes,
+    ...ViewPropTypes
   };
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('react-native-mock', this.props, this.props.children);
   }
 }
 

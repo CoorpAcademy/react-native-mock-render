@@ -21,10 +21,10 @@ const ImageBackground = createReactClass({
      */
     source: PropTypes.oneOfType([
       PropTypes.shape({
-        uri: PropTypes.string,
+        uri: PropTypes.string
       }),
       // Opaque type returned by require('./image.jpg')
-      PropTypes.number,
+      PropTypes.number
     ]),
     /**
      * A static image to display while loading the image source.
@@ -32,10 +32,10 @@ const ImageBackground = createReactClass({
      */
     defaultSource: PropTypes.oneOfType([
       PropTypes.shape({
-        uri: PropTypes.string,
+        uri: PropTypes.string
       }),
       // Opaque type returned by require('./image.jpg')
-      PropTypes.number,
+      PropTypes.number
     ]),
     /**
      * When true, indicates the image is an accessibility element.
@@ -114,16 +114,12 @@ const ImageBackground = createReactClass({
   mixins: [NativeMethodsMixin],
   statics: {
     resizeMode: ImageResizeMode,
-    getSize(uri, success, failure) {
-
-    },
-    prefetch(uri) {
-
-    }
+    getSize(uri, success, failure) {},
+    prefetch(uri) {}
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = ImageBackground;

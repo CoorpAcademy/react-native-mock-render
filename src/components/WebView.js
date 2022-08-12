@@ -14,7 +14,7 @@ const NavigationType = {
   backforward: WebViewManager.NavigationType.BackForward,
   reload: WebViewManager.NavigationType.Reload,
   formresubmit: WebViewManager.NavigationType.FormResubmitted,
-  other: WebViewManager.NavigationType.Other,
+  other: WebViewManager.NavigationType.Other
 };
 
 const JSNavigationScheme = WebViewManager.JSNavigationScheme;
@@ -113,12 +113,12 @@ const WebView = createReactClass({
      * document must also include the webkit-playsinline attribute."
      * @platform ios
      */
-    allowsInlineMediaPlayback: PropTypes.bool,
+    allowsInlineMediaPlayback: PropTypes.bool
   },
 
   statics: {
     JSNavigationScheme,
-    NavigationType,
+    NavigationType
   },
 
   getWebViewHandle() {
@@ -139,8 +139,8 @@ const WebView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
-  },
+    return React.createElement('react-native-mock', this.props, this.props.children);
+  }
 });
 
 module.exports = WebView;
