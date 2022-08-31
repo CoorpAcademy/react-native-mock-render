@@ -50,6 +50,8 @@ require('@coorpacademy/react-native-mock-render/mock')({
 
 ### Jest
 
+--> jest mocking <https://github.com/facebook/react-native/blob/main/jest/mockComponent.js>
+
 Jest [doesn't support](https://github.com/Root-App/react-native-mock-render/issues/23) `require.cache`, so the correct way to do the mocking is using `jest.mock('react-native', () => require('react-native-mock-render'), {virtual: true})` in your tests setup file.
 
 ## Why?
