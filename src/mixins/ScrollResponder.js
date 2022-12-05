@@ -428,18 +428,18 @@ const ScrollResponderMixin = {
    *
    * The `keyboardWillShow` is called before input focus.
    */
-  componentWillMount() {
-    this.keyboardWillOpenTo = null;
-    this.additionalScrollOffset = 0;
-    this.addListenerOn(
-      DeviceEventEmitter, 'keyboardWillShow', this.scrollResponderKeyboardWillShow
-    );
-    this.addListenerOn(
-      DeviceEventEmitter, 'keyboardWillHide', this.scrollResponderKeyboardWillHide
-    );
-    this.addListenerOn(DeviceEventEmitter, 'keyboardDidShow', this.scrollResponderKeyboardDidShow);
-    this.addListenerOn(DeviceEventEmitter, 'keyboardDidHide', this.scrollResponderKeyboardDidHide);
-  },
+  // componentWillMount() {
+  //   this.keyboardWillOpenTo = null;
+  //   this.additionalScrollOffset = 0;
+  //   this.addListenerOn(
+  //     DeviceEventEmitter, 'keyboardWillShow', this.scrollResponderKeyboardWillShow
+  //   );
+  //   this.addListenerOn(
+  //     DeviceEventEmitter, 'keyboardWillHide', this.scrollResponderKeyboardWillHide
+  //   );
+  //   this.addListenerOn(DeviceEventEmitter, 'keyboardDidShow', this.scrollResponderKeyboardDidShow);
+  //   this.addListenerOn(DeviceEventEmitter, 'keyboardDidHide', this.scrollResponderKeyboardDidHide);
+  // },
 
   componentWillUnmount() {
     DeviceEventEmitter.removeListener('keyboardWillShow', this.scrollResponderKeyboardWillShow);

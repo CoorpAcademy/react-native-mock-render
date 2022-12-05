@@ -1,7 +1,7 @@
 const SubscribableMixin = {
-  componentWillMount() {
-    this._subscriptions = [];
-  },
+  // componentWillMount() {
+  //   this._subscriptions = [];
+  // },
 
   componentWillUnmount() {
     this._subscriptions.forEach(
