@@ -1204,8 +1204,6 @@ const loop = function (
       };
       if (!animation || iterations === 0) {
         callback && callback({finished: true});
-      } else if (animation._isUsingNativeDriver()) {
-        animation._startNativeLoop(iterations);
       } else {
         restart(); // Start looping recursively on the js thread
       }
