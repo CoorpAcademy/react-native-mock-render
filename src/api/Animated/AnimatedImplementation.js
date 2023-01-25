@@ -1229,7 +1229,7 @@ const loop = function (
     },
 
     _isUsingNativeDriver() {
-      return animation._isUsingNativeDriver();
+      return false;
     },
   };
 };
