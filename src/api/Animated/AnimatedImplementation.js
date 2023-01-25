@@ -1181,6 +1181,59 @@ function stagger(time, animations) {
   }));
 }
 
+const loop = function (
+  animation,
+  {iterations = -1, resetBeforeIteration = true} = {},
+) {
+  let isFinished = false;
+  let iterationsSoFar = 0;
+  return {
+    start(callback) {
+      const restart = function (result = {finished: true}) {
+        if (
+          isFinished ||
+          iterationsSoFar === iterations ||
+          result.finished === false
+        ) {
+          callback && callback(result);
+        } else {
+          iterationsSoFar++;
+          resetBeforeIteration && animation.reset();
+          animation.start(restart);
+        }
+      };
+      if (!animation || iterations === 0) {
+        callback && callback({finished: true});
+      } else if (animation._isUsingNativeDriver()) {
+        animation._startNativeLoop(iterations);
+      } else {
+        restart(); // Start looping recursively on the js thread
+      }
+    },
+
+    stop() {
+      isFinished = true;
+      animation.stop();
+    },
+
+    reset() {
+      iterationsSoFar = 0;
+      isFinished = false;
+      animation.reset();
+    },
+
+    _startNativeLoop() {
+      throw new Error(
+        'Loops run using the native driver cannot contain Animated.loop animations',
+      );
+    },
+
+    _isUsingNativeDriver() {
+      return animation._isUsingNativeDriver();
+    },
+  };
+};
+
 function event(argMapping, config) {
   return function (...args) {
     const traverse = function (recMapping, recEvt, key) {
@@ -1223,6 +1276,7 @@ const AnimatedImplementation = {
   subtract,
   add,
   multiply,
+  loop,
   sequence,
   parallel,
   stagger,
