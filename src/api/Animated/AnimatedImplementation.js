@@ -1198,7 +1198,6 @@ const loop = function (
           callback && callback(result);
         } else {
           iterationsSoFar++;
-          resetBeforeIteration && animation.reset();
           animation.start(restart);
         }
       };
@@ -1217,7 +1216,6 @@ const loop = function (
     reset() {
       iterationsSoFar = 0;
       isFinished = false;
-      animation.reset();
     },
 
     _startNativeLoop() {
